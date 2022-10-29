@@ -1,0 +1,41 @@
+
+.inputWrapper input{
+    display: block;
+    margin-bottom: 1.5rem;
+    width: 80%;
+    padding: 1rem ;
+    height: 40px;
+    border: none;
+    outline: none;  
+    border-radius: 10px;
+}
+
+.inputWrapper input:focus{
+    border: 2px solid var(--color-primary);
+}
+
+.radioWrapper{
+    display: flex;
+    align-items: center;
+}
+
+.radio{
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.radio input{
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+.radio label{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}
