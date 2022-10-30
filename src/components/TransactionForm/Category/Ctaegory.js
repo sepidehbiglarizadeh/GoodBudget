@@ -1,14 +1,8 @@
 import Select from "react-select";
 import { FaTimes } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Category.module.css";
 
-// const options = [
-//   { value: "food", label: "Food" },
-//   { value: "travel", label: "Travel" },
-//   { value: "shopping", label: "Shopping" },
-//   { value: "other", label: "Other" },
-// ];
 
 const Category = ({ selectedOption, handleCHange }) => {
   const [isShow, setIsShow] = useState(false);
@@ -19,6 +13,19 @@ const Category = ({ selectedOption, handleCHange }) => {
     { value: "shopping", label: "Shopping" },
     { value: "other", label: "Other" },
   ]);
+
+  useEffect(() => {
+    if (categories.length > 4) {
+      localStorage.setItem("categories", JSON.stringify(categories));
+    }
+  }, [categories]);
+
+  useEffect(() => {
+    const savedCategories = JSON.parse(localStorage.getItem("categories"));
+    if (savedCategories) {
+      setCategories(savedCategories);
+    }
+  }, []);
 
   const showNewCategoryHandler = (e) => {
     e.preventDefault();
@@ -31,7 +38,10 @@ const Category = ({ selectedOption, handleCHange }) => {
 
   const addNewCategoryHandler = (e) => {
     e.preventDefault();
-    setCategories([...categories, { value: inputValue, label: inputValue }]);
+    setCategories((prev) => [
+      ...prev,
+      { value: inputValue, label: inputValue },
+    ]);
     setIsShow(false);
   };
 
