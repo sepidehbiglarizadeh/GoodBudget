@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./Category.module.css";
 
 
-const Category = ({ selectedOption, handleCHange }) => {
+const Category = ({ selectedOption, setSelectedOption }) => {
   const [isShow, setIsShow] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [categories, setCategories] = useState([
@@ -50,7 +50,7 @@ const Category = ({ selectedOption, handleCHange }) => {
       <div className={`${isShow ? "hidden" : styles.categoryWrapper}`}>
         <Select
           defaultValue={selectedOption}
-          onChange={handleCHange}
+          onChange={setSelectedOption}
           options={categories}
           className={styles.select}
           theme={(theme) => ({
