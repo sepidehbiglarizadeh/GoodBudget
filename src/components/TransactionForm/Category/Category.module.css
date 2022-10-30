@@ -1,0 +1,52 @@
+.categoryWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .categoryBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .select {
+    width: 50%;
+    margin-right: 1rem;
+  }
+  
+  .newCategory {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .newCategory input  {
+    height: 40px;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-right: 1rem;
+  }
+  
+  .addCategoryBtn{
+      background-color: var(--color-primary);
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      height: 40px;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+  }
+  
+  .closeBtn{
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 1rem ;
+      height: 40px;
+  }
