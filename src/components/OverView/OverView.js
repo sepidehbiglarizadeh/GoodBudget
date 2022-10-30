@@ -1,6 +1,8 @@
 import { useState } from "react";
 import TransactionForm from "../TransactionForm/TransactionForm";
 import styles from "./OverView.module.css";
+import logo from "../../assets/images/avocado.png";
+import { FaPlus, FaTimes } from "react-icons/fa";
 
 const OverView = () => {
   const [isShow, setIsShow] = useState(false);
@@ -8,16 +10,22 @@ const OverView = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <div>Image</div>
+        <div className={styles.imgContainer}>
+          <img src={logo} alt="logo" />
+        </div>
         <div className={styles.textWrapper}>
           <span>$0</span>
           <span>$0</span>
         </div>
-        <button onClick={() => setIsShow((prevState) => !prevState)}>
-          {isShow ? "Cancel" : "Add"}
+        <button className={styles.addBtn} onClick={() => setIsShow((prevState) => !prevState)}>
+          {isShow ? <FaTimes /> : <FaPlus />}
         </button>
       </div>
-      <TransactionForm isShow={isShow}/>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <TransactionForm isShow={isShow} />
     </section>
   );
 };

@@ -19,6 +19,7 @@ const TransactionForm = ({isShow}) => {
           <label htmlFor="expense">Expense</label>
         </div>
       </div>
+      <button className={styles.btn}>Add Transaction</button>
     </form>
   );
 };

@@ -17,6 +17,7 @@
 .radioWrapper{
     display: flex;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .radio{
@@ -38,4 +39,16 @@
 
 .hidden{
     display: none;
+}
+
+.btn{
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.8rem;
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }

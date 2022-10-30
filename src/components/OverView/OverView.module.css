@@ -1,24 +1,26 @@
 .container {
   background-color: var(--color-secondary);
   border-radius: 50px 50px 0 0;
-  padding: 5rem 3rem;
+  padding: 2rem 3rem;
   margin-top: -100px;
+  padding-bottom: 100px;
 }
 
 .content {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.container button {
+.addBtn {
   background-color: var(--color-primary);
   color: #fff;
   padding: 1rem 1.5rem;
   border: none;
   outline: none;
-  border-radius: 10px;
+  border-radius: 100%;
   cursor: pointer;
+  font-size: 2rem;
 }
 
 .textWrapper {
@@ -29,4 +31,12 @@
 .textWrapper :first-child {
   color: #fff;
   font-size: 2.5rem;
+}
+
+.imgContainer{
+  width: 40%;
+}
+
+.imgContainer img{
+  width: 100%;
 }
