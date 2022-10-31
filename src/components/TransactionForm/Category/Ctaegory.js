@@ -3,11 +3,11 @@ import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import styles from "./Category.module.css";
 
-
 const Category = ({ selectedOption, setSelectedOption }) => {
   const [isShow, setIsShow] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [categories, setCategories] = useState([
+    { value: "", label: "Select a Category", isDisabled: true },
     { value: "food", label: "Food" },
     { value: "travel", label: "Travel" },
     { value: "shopping", label: "Shopping" },
@@ -49,8 +49,8 @@ const Category = ({ selectedOption, setSelectedOption }) => {
     <>
       <div className={`${isShow ? "hidden" : styles.categoryWrapper}`}>
         <Select
-          defaultValue={selectedOption}
-          onChange={setSelectedOption}
+          defaultValue={categories[0]}
+          onChange={(selectedOption) => setSelectedOption(selectedOption.value)}
           options={categories}
           className={styles.select}
           theme={(theme) => ({

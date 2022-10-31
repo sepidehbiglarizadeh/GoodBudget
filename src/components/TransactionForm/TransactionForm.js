@@ -2,7 +2,7 @@ import { useState } from "react";
 import Category from "./Category/Ctaegory";
 import styles from "./TransactionForm.module.css";
 
-const TransactionForm = ({ isShow }) => {
+const TransactionForm = ({ isShow, setIsShow, addTransaction }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [formValues, setFormValues] = useState({
     type: "",
@@ -16,17 +16,39 @@ const TransactionForm = ({ isShow }) => {
       [e.target.name]: e.target.value,
       category: selectedOption,
     });
+
+    console.log(formValues);
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    addTransaction(formValues);
+    setIsShow(false);
+    setFormValues({
+      type: "",
+      amount: 0,
+      desc: "",
+    });
   };
 
   return (
-    <form className={`${isShow ? "" : "hidden"}`}>
+    <form className={`${isShow ? "" : "hidden"}`} onSubmit={submitHandler}>
       <Inputs formValues={formValues} changeHandler={changeHandler} />
       <Category
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
       />
       <RadioBtns formValues={formValues} changeHandler={changeHandler} />
-      <button className={styles.btn}>Add Transaction</button>
+      <button
+        className={`${styles.btn} ${formValues.type === "" ? "opacity" : ""}`}
+        disabled={
+          formValues.desc === "" ||
+          formValues.amount === 0 ||
+          formValues.type === ""
+        }
+      >
+        Add Transaction
+      </button>
     </form>
   );
 };
@@ -44,6 +66,7 @@ const Inputs = ({ formValues, changeHandler }) => {
         value={formValues.desc}
         type="text"
         onChange={changeHandler}
+        placeholder="Description..."
       />
       <label>Amount : </label>
       <input

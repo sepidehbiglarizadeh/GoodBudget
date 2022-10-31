@@ -4,7 +4,7 @@ import styles from "./OverView.module.css";
 import logo from "../../assets/images/avocado.png";
 import { FaPlus, FaTimes } from "react-icons/fa";
 
-const OverView = () => {
+const OverView = ({ addTransaction }) => {
   const [isShow, setIsShow] = useState(false);
 
   return (
@@ -17,7 +17,10 @@ const OverView = () => {
           <span>$0</span>
           <span>$0</span>
         </div>
-        <button className={styles.addBtn} onClick={() => setIsShow((prevState) => !prevState)}>
+        <button
+          className={styles.addBtn}
+          onClick={() => setIsShow((prevState) => !prevState)}
+        >
           {isShow ? <FaTimes /> : <FaPlus />}
         </button>
       </div>
@@ -25,7 +28,11 @@ const OverView = () => {
         <div></div>
         <div></div>
       </div>
-      <TransactionForm isShow={isShow} />
+      <TransactionForm
+        isShow={isShow}
+        setIsShow={setIsShow}
+        addTransaction={addTransaction}
+      />
     </section>
   );
 };

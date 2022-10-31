@@ -3,5 +3,10 @@
 }
 
 .hidden {
-    display: none;
-  }
+  display: none;
+}
+
+.opacity {
+  opacity: 0.6;
+  cursor: default !important;
+}
