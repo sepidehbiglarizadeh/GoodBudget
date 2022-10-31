@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <h2>Expenses on</h2>
-      <span>Oct 29</span>
+      <span>{new Date().toLocaleDateString('en-us', {month:"short", day:"numeric"})}</span>
     </header>
   );
 };

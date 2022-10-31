@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import OverView from "../OverView/OverView";
+import Transactions from "../Transactions/Transactions";
 
 const ExpenseApp = () => {
   const [income, setIncome] = useState(0);
@@ -13,7 +14,7 @@ const ExpenseApp = () => {
       {
         ...formValues,
         id: Date.now(),
-        createdAt: new Date().toLocaleDateString(),
+        createdAt: new Date().toLocaleDateString('en-us', {month:"short", day:"numeric"}),
       },
     ]);
   };
@@ -34,6 +35,7 @@ const ExpenseApp = () => {
     <>
       <Header />
       <OverView addTransaction={addTransaction} income={income} expense={expense}/>
+      <Transactions transactions={transactions} />
     </>
   );
 };

@@ -1,0 +1,35 @@
+.transactionsWrapper {
+  background-color: #fff;
+  min-height: 44vh;
+  border-radius: 50px 50px 0 0;
+  padding: 2rem 3rem;
+  margin-top: -70px;
+}
+
+.transaction{
+    border-bottom: 1px solid #c9c9c9;
+    padding: 1.5rem 0;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transactionDesc{
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.transactionDetail{
+    color: #c4c4c4;
+}
+
+.category::before{
+    content: "\006F";
+    color: var(--color-secondary);
+    margin-right: 0.5rem;
+    font-size: 2rem;
+}
