@@ -4,7 +4,7 @@ import styles from "./OverView.module.css";
 import logo from "../../assets/images/avocado.png";
 import { FaPlus, FaTimes } from "react-icons/fa";
 
-const OverView = ({ addTransaction }) => {
+const OverView = ({ addTransaction ,income,expense}) => {
   const [isShow, setIsShow] = useState(false);
 
   return (
@@ -14,8 +14,8 @@ const OverView = ({ addTransaction }) => {
           <img src={logo} alt="logo" />
         </div>
         <div className={styles.textWrapper}>
-          <span>$0</span>
-          <span>$0</span>
+          <span>${income - expense}</span>
+          <span>${income}</span>
         </div>
         <button
           className={styles.addBtn}
