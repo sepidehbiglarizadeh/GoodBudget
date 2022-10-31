@@ -6,6 +6,10 @@
   margin-top: -70px;
 }
 
+.transactionsWrapper h3{
+    text-align: center;
+}
+
 .transaction{
     border-bottom: 1px solid #c9c9c9;
     padding: 1.5rem 0;

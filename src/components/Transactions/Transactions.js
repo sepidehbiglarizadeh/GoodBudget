@@ -1,6 +1,12 @@
 import styles from "./Transactions.module.css";
 
-const Transactions = ({ transactions}) => {
+const Transactions = ({ transactions }) => {
+  if(!transactions.length) return (
+    <section className={styles.transactionsWrapper}>
+        <h3>There is no transaction !!</h3>
+    </section>
+  )
+
   return (
     <section className={styles.transactionsWrapper}>
       {transactions.map((t) => {
@@ -8,11 +14,15 @@ const Transactions = ({ transactions}) => {
           <div className={styles.transaction}>
             <div className={`${styles.flex} ${styles.transactionDesc}`}>
               <p>{t.desc}</p>
-              <span style={{color: t.type === "income" ? "#064e3b" : "#be123c"}}>${t.amount}</span>
+              <span
+                style={{ color: t.type === "income" ? "#064e3b" : "#be123c" }}
+              >
+                ${t.amount}
+              </span>
             </div>
             <div className={`${styles.flex} ${styles.transactionDetail}`}>
               <span className={styles.category}>{t.category}</span>
-              <span >{t.createdAt}</span>
+              <span>{t.createdAt}</span>
             </div>
           </div>
         );
