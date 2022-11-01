@@ -37,3 +37,14 @@
     margin-right: 0.5rem;
     font-size: 2rem;
 }
+
+.searchInput{
+    display: block;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  height: 40px;
+  border: 1px solid #c4c4c4;
+  outline: none;
+  border-radius: 10px;
+}

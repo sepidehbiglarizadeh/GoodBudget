@@ -4,7 +4,7 @@ import styles from "./OverView.module.css";
 import logo from "../../assets/images/avocado.png";
 import { FaPlus, FaTimes } from "react-icons/fa";
 
-const OverView = ({ addTransaction ,income,expense}) => {
+const OverView = ({ addTransaction, income, expense }) => {
   const [isShow, setIsShow] = useState(false);
 
   return (

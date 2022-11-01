@@ -16,8 +16,6 @@ const TransactionForm = ({ isShow, setIsShow, addTransaction }) => {
       [e.target.name]: e.target.value,
       category: selectedOption,
     });
-
-    console.log(formValues);
   };
 
   const submitHandler = (e) => {
